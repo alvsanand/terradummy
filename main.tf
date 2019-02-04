@@ -26,7 +26,7 @@ data "aws_ami" "amazon_linux_ami" {
 # Use the previous AMI and launch an EC2 instance
 resource "aws_instance" "web" {
   ami           = "${data.aws_ami.amazon_linux_ami.id}"
-  instance_type = "t2.micro"
+  instance_type = "${var.instance_type}"
 
   tags = {
     Name = "DummyMachine"
