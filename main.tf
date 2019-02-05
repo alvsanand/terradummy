@@ -32,3 +32,7 @@ resource "aws_instance" "web" {
     Name = "DummyMachine"
   }
 }
+
+module "elk_service" {
+  source = "modules/elasticsearch"
+}

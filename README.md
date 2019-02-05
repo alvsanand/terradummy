@@ -17,4 +17,4 @@ Where X is the number in the steps shown before.
 ## Links used during the demo
 
 * [terraform aws_instance](https://www.terraform.io/docs/providers/aws/r/instance.html)
-* [terraform elasticsearch_domain](https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html)
+* [terraform aws_elasticsearch_domain](https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html)
