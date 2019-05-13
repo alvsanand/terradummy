@@ -21,6 +21,7 @@ data "aws_ami" "amazon_linux_ami" {
     values = ["hvm"]
   }
 
+  owners = ["amazon"]
 }
 
 # Use the previous AMI and launch an EC2 instance
