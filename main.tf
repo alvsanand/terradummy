@@ -1,13 +1,11 @@
-provider "aws" {
-  region  = "eu-west-1"
-  profile = "default"
+terraform {
+  required_version = "~> 0.11.13"
 
-  assume_role {
-    role_arn = "arn:aws:iam::527582682406:role/pro-pruebaspr-delegated-devops"
+  required_providers {
+    aws = ">= 2.23.0"
   }
 }
 
-# Look for the AMI to inject to aws_instance
 data "aws_ami" "amazon_linux_ami" {
   most_recent = true
 
@@ -24,7 +22,6 @@ data "aws_ami" "amazon_linux_ami" {
   owners = ["amazon"]
 }
 
-# Use the previous AMI and launch an EC2 instance
 resource "aws_instance" "web" {
   ami           = "${data.aws_ami.amazon_linux_ami.id}"
   instance_type = "${var.instance_type}"
@@ -34,6 +31,7 @@ resource "aws_instance" "web" {
   }
 }
 
-module "elk_service" {
-  source = "modules/elasticsearch"
-}
+# Call to the module dynamodb with the following parameters:
+# - source == modules/dynamodb
+# - table_name == DummyTable
+# TODO
