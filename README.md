@@ -17,4 +17,6 @@ Where X is the number in the steps shown before.
 ## Links used during the demo
 
 * [terraform aws_instance](https://www.terraform.io/docs/providers/aws/r/instance.html)
-* [terraform aws_elasticsearch_domain](https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html)
+* [terraform dynamodb_table](https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html)
+* [terraform variables](https://www.terraform.io/docs/configuration/variables.html)
+* [terraform modules](https://www.terraform.io/docs/configuration/modules.html)
