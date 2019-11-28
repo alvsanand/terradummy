@@ -1,4 +1,6 @@
-variable "instance_type" {
-    type = "string"
-    description = "EC2 instance type"
-}
+# Create variable instance_type of string type
+# TODO
+
+# Create variable instance_name of string type
+# TODO
+

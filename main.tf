@@ -1,13 +1,11 @@
-provider "aws" {
-  region  = "eu-west-1"
-  profile = "default"
+terraform {
+  required_version = "~> 0.11.13"
 
-  assume_role {
-    role_arn = "arn:aws:iam::527582682406:role/pro-pruebaspr-delegated-devops"
+  required_providers {
+    aws = ">= 2.23.0"
   }
 }
 
-# Look for the AMI to inject to aws_instance
 data "aws_ami" "amazon_linux_ami" {
   most_recent = true
 
@@ -24,12 +22,14 @@ data "aws_ami" "amazon_linux_ami" {
   owners = ["amazon"]
 }
 
-# Use the previous AMI and launch an EC2 instance
+# Modify resource in order to use variables:
+# - instance_type uses variable instance_type
+# - Tag name uses variable instance_name
 resource "aws_instance" "web" {
-  ami           = "${data.aws_ami.amazon_linux_ami.id}"
+  ami           = "" # TODO
   instance_type = "${var.instance_type}"
 
   tags = {
-    Name = "DummyMachine"
+    Name = "" # TODO
   }
 }
