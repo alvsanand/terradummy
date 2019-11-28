@@ -1,9 +1,8 @@
-provider "aws" {
-  region  = "eu-west-1"
-  profile = "default"
+terraform {
+  required_version = "~> 0.11.13"
 
-  assume_role {
-    role_arn = "arn:aws:iam::527582682406:role/pro-pruebaspr-delegated-devops"
+  required_providers {
+    aws = ">= 2.23.0"
   }
 }
 
@@ -21,5 +20,5 @@ data "aws_ami" "amazon_linux_ami" {
 # - instance_type == t2.micro
 # - tag Name == DummyMachine
 resource "aws_instance" "web" {
-    # TODO
+  # TODO
 }
