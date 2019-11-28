@@ -26,10 +26,10 @@ data "aws_ami" "amazon_linux_ami" {
 # - instance_type uses variable instance_type
 # - Tag name uses variable instance_name
 resource "aws_instance" "web" {
-  ami           = "" # TODO
+  ami           = "${data.aws_ami.amazon_linux_ami.id}"
   instance_type = "${var.instance_type}"
 
   tags = {
-    Name = "" # TODO
+    Name = "${var.instance_name}"
   }
 }
