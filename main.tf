@@ -34,4 +34,8 @@ resource "aws_instance" "web" {
 # Call to the module dynamodb with the following parameters:
 # - source == modules/dynamodb
 # - table_name == DummyTable
-# TODO
+module "dynamodb" {
+  source = "modules/dynamodb"
+
+  table_name = "DummyTable"
+}

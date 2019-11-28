@@ -4,4 +4,14 @@
 # - contains an attribute id of type S
 # - billing_mode == PAY_PER_REQUEST
 
-# TODO
+resource "aws_dynamodb_table" "table" {
+  name     = "${var.table_name}"
+  hash_key = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+
+  billing_mode = "PAY_PER_REQUEST"
+}

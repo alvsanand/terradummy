@@ -1,2 +1,5 @@
 # Create variable table_name of string type
-# TODO
+variable "table_name" {
+    type = "string"
+    description = "DynamoDB table name"
+}
