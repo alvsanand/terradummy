@@ -16,5 +16,5 @@ Where X is the number in the steps shown before.
 
 ## Links used during the demo
 
+* [terraform variables](https://www.terraform.io/docs/configuration/variables.html)
 * [terraform aws_instance](https://www.terraform.io/docs/providers/aws/r/instance.html)
-* [terraform elasticsearch_domain](https://www.terraform.io/docs/providers/aws/r/elasticsearch_domain.html)
