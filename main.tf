@@ -9,7 +9,7 @@ terraform {
 # Look for an the "latest" AMI that:
 # - owner-alias == amazon
 # - virtualization-type == hvm
-# - owners == hvm
+# - owners == amazon
 
 data "aws_ami" "amazon_linux_ami" {
   # TODO
